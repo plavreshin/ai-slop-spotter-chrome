@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
+  "entry": [
+    "src/background.ts",
+    "src/content.ts",
+    "src/offscreen.ts",
+    "src/inference.worker.ts",
+    "src/popup.ts",
+    "src/lab.ts",
+    "scripts/*.mjs",
+    "tests/**/*.ts"
+  ],
+  "ignorePatterns": ["dist/**", "artifacts/**"]
+}

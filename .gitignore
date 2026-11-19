@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.fallow/
+test-results/
+artifacts/
+.DS_Store

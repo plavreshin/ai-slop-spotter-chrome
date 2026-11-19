@@ -1,0 +1,6 @@
+{
+  "plugins": ["typescript", "unicorn", "oxc"],
+  "categories": { "correctness": "error" },
+  "ignorePatterns": ["dist", "node_modules", "artifacts"],
+  "env": { "browser": true, "node": true }
+}

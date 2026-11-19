@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slop Spot</title>
+  </head>
+  <body class="popup">
+    <main>
+      <header>
+        <span class="brand-mark" aria-hidden="true">s.</span>
+        <div>
+          <h1>Slop Spot</h1>
+          <p class="eyebrow">AI scores for visible Slack messages.</p>
+        </div>
+        <span class="local-tag">LOCAL</span>
+      </header>
+      <section class="model-card" aria-labelledby="model-title">
+        <div class="card-heading">
+          <h2 id="model-title">Detection model</h2>
+          <span id="phase" class="phase">Checking</span>
+        </div>
+        <p id="model-detail" role="status">Checking for a downloaded model…</p>
+        <progress
+          id="progress"
+          max="100"
+          value="0"
+          aria-label="Model download progress"
+          hidden
+        ></progress>
+        <div class="card-actions">
+          <button id="download" class="primary" type="button">Download model · 761 MB</button
+          ><button
+            id="delete"
+            class="quiet"
+            type="button"
+            title="Remove the downloaded model and stop scanning. You can download it again."
+            hidden
+          >
+            Delete model
+          </button>
+        </div>
+        <p class="small">Runs on this device. Requires WebGPU.</p>
+      </section>
+      <section aria-labelledby="scan-title">
+        <h2 id="scan-title">Scanning</h2>
+        <label class="toggle-row" for="paused"
+          ><span
+            ><strong>Pause scanning</strong
+            ><span class="small">Hide scores and stop new analysis.</span></span
+          ><input id="paused" type="checkbox" role="switch"
+        /></label>
+        <label class="range-label" for="threshold"
+          >Highlight scores at or above
+          <output id="threshold-value" for="threshold">75%</output></label
+        >
+        <input id="threshold" type="range" min="15" max="99" step="1" value="75" />
+        <p class="small">
+          Scores the start of English messages. Scores for short messages are less reliable. A score
+          is not proof of AI use.
+        </p>
+      </section>
+      <p id="notice" class="error" role="alert" hidden></p>
+      <footer>
+        <span class="privacy-dot" aria-hidden="true"></span
+        ><span>No message uploads. No tracking.</span
+        ><a
+          href="lab.html"
+          target="_blank"
+          rel="noopener"
+          aria-label="Test model, opens in a new tab"
+          >Test model</a
+        >
+      </footer>
+    </main>
+    <script type="module" src="/src/popup.ts"></script>
+  </body>
+</html>

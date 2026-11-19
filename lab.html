@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slop Spot · Local model test</title>
+  </head>
+  <body class="lab">
+    <main>
+      <header>
+        <span class="brand-mark" aria-hidden="true">s.</span>
+        <div>
+          <h1>Test the model</h1>
+          <p class="eyebrow">Analyze a sample on this device.</p>
+        </div>
+        <span class="local-tag">LOCAL</span>
+      </header>
+      <section class="model-card" aria-labelledby="model-title">
+        <div class="card-heading">
+          <h2 id="model-title">Detection model</h2>
+          <span id="phase" class="phase">Checking</span>
+        </div>
+        <p id="model-detail" role="status">Checking for a downloaded model…</p>
+        <progress
+          id="progress"
+          max="100"
+          value="0"
+          aria-label="Model download progress"
+          hidden
+        ></progress>
+        <div class="card-actions">
+          <button id="download" class="primary" type="button">Download model · 761 MB</button
+          ><button
+            id="delete"
+            class="quiet"
+            type="button"
+            title="Remove the downloaded model and stop scanning. You can download it again."
+            hidden
+          >
+            Delete model
+          </button>
+        </div>
+        <p class="small">voi-slop-detect-380M · WebGPU · FP16</p>
+      </section>
+      <section>
+        <h2>Analyze English text</h2>
+        <p>
+          Enter English text or try the sample below. The model reads the first 512 tokens. Short
+          messages have less reliable scores. Your text stays on this device.
+        </p>
+        <label for="sample">Text to analyze</label
+        ><textarea id="sample" rows="8" maxlength="100000">
+The release is delayed until Thursday. I found a bug in the account import this morning: rows with an empty country field get dropped without an error. I have a fix ready, but I want to run it against last week's export before we ship. Please hold off on sending the announcement. I will post the test results here after lunch and update the release notes if anything else changes.</textarea
+        ><button id="analyze" class="primary" type="button">Analyze locally</button>
+        <p id="result" class="result" role="status">Select Analyze locally to get a score.</p>
+      </section>
+      <p id="notice" class="error" role="alert" hidden></p>
+      <footer>
+        <span class="privacy-dot" aria-hidden="true"></span
+        ><span>No message uploads. No tracking. Scores can be wrong.</span>
+      </footer>
+    </main>
+    <script type="module" src="/src/lab.ts"></script>
+  </body>
+</html>

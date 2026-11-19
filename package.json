@@ -1,0 +1,39 @@
+{
+  "name": "ai-slop-spot-chrome-ext",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/build.mjs --watch",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --type-aware .",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "test": "vitest run",
+    "fallow": "fallow dead-code && fallow dupes && fallow architecture",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm fallow && pnpm build"
+  },
+  "dependencies": {
+    "@huggingface/tokenizers": "^0.2.0",
+    "franc-min": "^6.2.0",
+    "onnxruntime-web": "^1.31.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.7",
+    "@types/node": "^26.6.6",
+    "fallow": "^3.43.2",
+    "jsdom": "^31.0.1",
+    "oxfmt": "^0.79.0",
+    "oxlint": "^1.94.0",
+    "oxlint-tsgolint": "^7.0.2007",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@12.4.1"
+}
